@@ -1,508 +1,355 @@
-+++ b/src/index.html
-@@ -8,6 +8,86 @@ <!DOCTYPE html>
- <!-- Sección Hero -->
- <section class="hero" id="inicio">
--  <div class="container">
-+  <div class="container">
-+    <div class="hero-overlay"></div>
-     <h1>Transforma tu Negocio con Nuestra Solución</h1>
-     <p>Descubre cómo nuestra plataforma puede ayudarte a alcanzar tus metas de crecimiento</p>
-     <div class="cta-container">
-       <button class="btn">Empezar Gratis</button>
-       <button class="btn btn-secondary mt-2">Más Información</button>
-     </div>
-   </div>
- </section>
- 
- <!-- Sección de Características -->
- <section class="features" id="caracteristicas">
--  <div class="section-title">
-+  <div class="section-title">
-       <h2>Nuestra Diferencia</h2>
-       <p>Hemos desarrollado una plataforma que combina tecnología avanzada con un enfoque humano para</p>
-     </div>
--    <div class="features-grid">
-+    <div class="features-grid">
-       {{ /* Agrega tarjetas personalizadas aquí si necesitas más estilo (Bootstrap/Tailwind) */ }}
-       <div class="feature-card">
-         <i class="fas fa-lightbulb feature-icon"></i>
-         <h3>Innovación</h3>
-         <p>Desarrollamos soluciones personalizadas usando tecnologías de vanguardia</p>
-       </div>
-       <div class="feature-card">
-         <i class="fas fa-briefcase feature-icon"></i>
-         <h3>Expertise</h3>
-         <p>Nuestro equipo combina años de experiencia en desarrollo web y UX experto</p>
-       </div>
-       <div class="feature-card">
-         <i class="fas fa-heart feature-icon"></i>
-         <h3>Compromiso</h3>
-         <p>Servicio 24/7 con soporte técnico especializado</p>
-       </div>
-     </div>
- </section>
- 
- <!-- Sección Sobre Nosotros -->
- <section class="about" id="about">
--  <div class="about-content">
-+  <div class="about-content">
-       <div class="about-image">
--        <h2>Construimos soluciones que duran</h2>
-+        <p>Fundada en 2018 por expertos en transformación digital</p>
-       </div>
-       <div class="about-text">
-         <div class="team-intro">
-           <h2>Nuestro Equipo</h2>
-           <p>Queremos conocerte: programa una llamada gratuita y descubre cómo podemos ayudarte</p>
-         </div>
--        <div class="team-cards" style="display: none;">
-+        <div class="team-cards">
-           <!-- Aquí podrías usar Bootstrap cards con imágenes reales del team -->
-           <div class="card">
-             <img src="/images/team1.jpg" class="card-img-top">
-             <div class="card-body">
-               <h4 class="card-title">John Doe</h4>
-               <p class="card-text">CEO y Fundador</p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- 
- <!-- Sección Contacto -->
- <section class="contact" id="contacto">
--  <div class="contact-form">
-+  <div class="contact-form">
-       <h2>Escríbenos</h2>
-       <form id="contactForm">
-         {{ /* Agrega campos personalizados con validación via JavaScript */ }}
-         <div class="form-group">
-           <label>Nombre completo</label>
-           <input type="text" required>
-         </div>
-         <div class="form-group">
-           <label>Tu correo electrónico</label>
-           <input type="email" required>
-         </div>
-         <div class="form-group">
-           <label>Tu mensaje</label>
-           <textarea rows="5" required></textarea>
-         </div>
-         <button type="submit" class="btn">Enviar Mensaje</button>
-       </form>
-       <div class="success-message hidden" id="success-message">
-         <p class="text-primary">¡Mensaje enviado exitosamente!</p>
-       </div>
-     </div>
-   </section>
- 
- <!-- Pie de página -->
- <footer>
--  <div class="container">
-+  <div class="container" style="padding-top: 2rem">
-     <div class="footer-content">
-       <div class="footer-section">
-         <h3>Contáctenos</h3>
-         <ul>
-           {{ /* Agrega enlaces reales a tu directorio público */ }}
-           <li><a href="tel:+123456789">+1 (234) 567-8900</a></li>
-           <li><a href="mailto:hola@example.com">hola@example.com</a></li>
-         </ul>
-         <div class="social-links">
-           {{ /* Usa Font Awesome para iconos en el footer \]*/}}
-           <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-           <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-           <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-         </div>
-       </div>
-       <div class="footer-section">
-         <h3>Políticas Legales</h3>
-         <ul>
-           <li><a href="#">Política de Privacidad</a></li>
-           <li><a href="#">Términos y Condiciones</a></li>
-         </ul>
-       </div>
-     </div>
-     <div class="copyright">
-       <p>&copy; 2023 Mi Marca. Todos los derechos reservados.</p>
-     </div>
-   </div>
- </footer>
- 
- <!-- JavaScript -->
- <script>
-   {{ /* Añade funcionalidades dinámicas aquí */ }}
-   (function() {
-     // Validación de formulario con JavaScript
-     document.getElementById('contactForm').addEventListener('submit', function(e) {
-       e.preventDefault();
-       // Aquí procesarías el formulario (ej: enviar a un servicio de formularios)
-       alert('Formulario enviado exitosamente');
-       document.getElementById('success-message').classList.remove('hidden');
-     });
-     
-     // Carga diferida de imágenes
-     var images = document.querySelectorAll('img:not(.social-link)');
-     images.forEach(function(img) {
-       img.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUg...';
-     });
-   })();
- </script>
- </body>
-</html>src/index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Marca – Soluciones Digitales</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d6efd" />
+  <meta name="description" content="Soluciones digitales personalizadas: desarrollo web, automatización, analítica y soporte 24/7." />
+  <title>MiMarca | Soluciones Digitales Profesionales</title>
 
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-          integrity="sha512-xxxx..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --primary: #0d6efd;
-            --primary-dark: #0b5ed7;
-            --secondary: #6c757d;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --radius: .5rem;
-            --transition: .3s ease;
-        }
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxxx..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height:1.6;
-            color: var(--dark);
-            background:#fff;
-        }
-        a { text-decoration:none; color:inherit; }
-        ul { list-style:none; }
-        img { max-width:100%; height:auto; }
-
-        .container { width:90%; max-width:1200px; margin:auto; padding:0 1rem; }
-
-        /* ---------- Header ---------- */
-        header {
-            background:#fff;
-            box-shadow:0 2px 4px rgba(0,0,0,.08);
-            position:sticky;
-            top:0;
-            z-index:1000;
-        }
-        .nav {
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            height:4.5rem;
-        }
-        .logo { font-size:1.5rem; font-weight:700; color:var(--primary); }
-        .nav-links { display:flex; gap:1.5rem; }
-        .nav-links a {
-            font-weight:500;
-            color:var(--dark);
-            transition:var(--transition);
-        }
-        .nav-links a:hover { color:var(--primary); }
-
-        /* ---------- Hero ---------- */
-        .hero {
-            position:relative;
-            background:linear-gradient(135deg, #0d6efd, #6610f2);
-            color:#fff;
-            padding:6rem 0;
-            text-align:center;
-            overflow:hidden;
-        }
-        .hero::after {
-            content:"";
-            position:absolute;
-            inset:0;
-            background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23fff"/><path d="M0 0 L100 100 M100 0 L0 100" stroke="%23000" stroke-width="0.5" opacity="0.03"/></svg>') repeat;
-            opacity:.08;
-        }
-        .hero h1 { font-size:2.8rem; margin-bottom:1rem; }
-        .hero p { font-size:1.2rem; max-width:720px; margin:0 auto 2rem; opacity:.9; }
-        .btn {
-            display:inline-block;
-            padding:.9rem 2rem;
-            border-radius:var(--radius);
-            font-weight:600;
-            transition:var(--transition);
-            cursor:pointer;
-            border:none;
-        }
-        .btn-primary { background:#fff; color:var(--primary); }
-        .btn-primary:hover { background:#e9ecef; }
-        .btn-outline {
-            background:transparent;
-            color:#fff;
-            border:2px solid #fff;
-        }
-        .btn-outline:hover { background:rgba(255,255,255,.15); }
-
-        /* ---------- Sections ---------- */
-        section { padding:5rem 0; }
-        .section-title { text-align:center; margin-bottom:3rem; }
-        .section-title h2 { font-size:2.2rem; margin-bottom:.5rem; color:var(--dark); }
-        .section-title p { color:var(--secondary); max-width:600px; margin:auto; }
-
-        /* Features */
-        .features { background:var(--light); }
-        .features-grid {
-            display:grid;
-            gap:2rem;
-            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-        }
-        .feature-card {
-            background:#fff;
-            padding:2rem;
-            border-radius:var(--radius);
-            text-align:center;
-            box-shadow:0 2px 6px rgba(0,0,0,.05);
-            transition:var(--transition);
-        }
-        .feature-card:hover { transform:translateY(-4px); box-shadow:0 6px 12px rgba(0,0,0,.1); }
-        .feature-icon { font-size:2.5rem; margin-bottom:1rem; color:var(--primary); }
-        .feature-card h3 { margin:1rem 0 .5rem; font-size:1.3rem; }
-
-        /* About */
-        .about { background:#fff; }
-        .about-content {
-            display:grid;
-            gap:3rem;
-            align-items:center;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-        }
-        .about-text h2 { font-size:2rem; margin-bottom:1rem; }
-        .about-text p { margin-bottom:1.5rem; color:var(--secondary); }
-        .about-image {
-            position:relative;
-            border-radius:var(--radius);
-            overflow:hidden;
-            box-shadow:0 4px 12px rgba(0,0,0,.1);
-        }
-        .about-image img { display:block; width:100%; height:auto; }
-
-        /* Contact */
-        .contact { background:var(--light); }
-        .contact-form {
-            max-width:600px;
-            margin:auto;
-            background:#fff;
-            padding:2.5rem;
-            border-radius:var(--radius);
-            box-shadow:0 4px 12px rgba(0,0,0,.08);
-        }
-        .form-group { margin-bottom:1.5rem; }
-        .form-group label {
-            display:block;
-            margin-bottom:.5rem;
-            font-weight:600;
-            color:var(--dark);
-        }
-        .form-group input,
-        .form-group textarea {
-            width:100%;
-            padding:.9rem;
-            border:1px solid #ced4da;
-            border-radius:var(--radius);
-            font-size:1rem;
-            transition:var(--transition);
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline:none;
-            border-color:var(--primary);
-            box-shadow:0 0 0 .2rem rgba(13,111,255,.25);
-        }
-        .form-group textarea { min-height:150px; resize:vertical; }
-        .btn-submit {
-            width:100%;
-            background:var(--primary);
-            color:#fff;
-            font-size:1rem;
-            padding:.9rem;
-        }
-        .btn-submit:hover { background:var(--primary-dark); }
-        .success-message { margin-top:1.5rem; padding:1rem; background:#d4edda; color:#155724; border-radius:var(--radius); display:none; }
-
-        /* Footer */
-        footer {
-            background:var(--dark);
-            color:#fff;
-            padding:3rem 0 1.5rem;
-        }
-        .footer-content {
-            display:grid;
-            gap:2rem;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            margin-bottom:2rem;
-        }
-        .footer-section h3 { margin-bottom:1rem; font-size:1.2rem; }
-        .footer-section ul { line-height:1.8; }
-        .footer-section a { color:#ccc; transition:var(--transition); }
-        .footer-section a:hover { color:#fff; }
-        .social-links { display:flex; gap:.75rem; margin-top:1rem; }
-        .social-link {
-            width:2.5rem; height:2.5rem; display:flex; align-items:center; justify-content:center;
-            background:#495057; color:#fff; border-radius:50%; transition:var(--transition);
-        }
-        .social-link:hover { background:var(--primary); }
-        .copyright { text-align:center; font-size:.9rem; color:#adb5bd; border-top:1px solid #495057; padding-top:1.5rem; }
-
-        /* ---------- Responsividad ---------- */
-        @media (max-width:768px) {
-            .nav-links { display:none; } /* En un proyecto real se añadiría menú hamburguesa */
-            .hero h1 { font-size:2.2rem; }
-            .btn { width:100%; margin:.5rem 0; }
-        }
-    </style>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="nav">
-                <div class="logo">MiMarca</div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#caracteristicas">Características</a></li>
-                    <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <div class="logo" aria-label="Logo de MiMarca">MiMarca</div>
+        <ul class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="#inicio">Inicio</a></li>
+          <li role="none"><a role="menuitem" href="#caracteristicas">Características</a></li>
+          <li role="none"><a role="menuitem" href="#precios">Precios</a></li>
+          <li role="none"><a role="menuitem" href="#testimonios">Testimonios</a></li>
+          <li role="none"><a role="menuitem" href="#contacto">Contacto</a></li>
+        </ul>
 
-    <!-- Hero -->
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="#contacto">Solicitar demo</a>
+          <button class="mobile-menu" id="mobileMenuBtn" aria-label="Abrir menú móvil" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <a href="#inicio" data-close>Inicio</a>
+        <a href="#caracteristicas" data-close>Características</a>
+        <a href="#precios" data-close>Precios</a>
+        <a href="#testimonios" data-close>Testimonios</a>
+        <a href="#contacto" data-close>Contacto</a>
+        <button class="btn btn-primary" style="width:100%;" data-close>Solicitar demo</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
     <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Impulsa tu negocio con tecnología de vanguardia</h1>
-            <p>Desde desarrollo web hasta automatización inteligente, ofrecemos soluciones personalizadas que crecen contigo.</p>
-            <div>
-                <a href="#contacto" class="btn btn-primary">Solicitar Demo</a>
-                <a href="#caracteristicas" class="btn btn-outline">Ver Características</a>
-            </div>
+      <div class="container">
+        <h1>Transforma tu negocio con tecnología inteligente</h1>
+        <p>
+          Nuestra plataforma combina automatización, analítica avanzada y diseño centrado en el usuario para impulsar
+          el crecimiento y la eficiencia de tu empresa.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contacto">Comenzar gratis</a>
+          <a class="btn btn-secondary" href="#caracteristicas">Ver características</a>
         </div>
+      </div>
     </section>
 
-    <!-- Características -->
     <section class="features" id="caracteristicas">
-        <div class="container">
-            <div class="section-title">
-                <h2>Qué nos diferencia</h2>
-                <p>Combinamos experiencia, innovación y un enfoque centrado en el usuario para entregar resultados medibles.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-code feature-icon"></i>
-                    <h3>Desarrollo a medida</h3>
-                    <p>Aplicaciones web, APIs y plataformas escalables construidas con las mejores prácticas.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-robot feature-icon"></i>
-                    <h3>Automatización inteligente</h3>
-                    <p>Flujos de trabajo RPA y bots que reducen tareas repetitivas y aumentan la productividad.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line feature-icon"></i>
-                    <h3>Analítica y BI</h3>
-                    <p>Tableros interactivos y modelos predictivos para tomar decisiones basadas en datos.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>Seguridad y cumplimiento</h3>
-                    <p>Implementamos estándares ISO‑27001, GDPR y pruebas de penetración continuas.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-mobile-alt feature-icon"></i>
-                    <h3>Experiencia móvil</h3>
-                    <p>Diseño responsive y Progressive Web Apps que funcionan en cualquier dispositivo.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-headset feature-icon"></i>
-                    <h3>Soporte 24/7</h3>
-                    <p>Equipo dedicado disponible en todo momento para resolver incidencias.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Qué nos hace diferentes</h2>
+          <p>
+            Ofrecemos soluciones personalizadas que se adaptan a tu equipo, procesos y objetivos. Todo respaldado por
+            métricas reales y un acompañamiento cercano.
+          </p>
         </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <i class="fas fa-code feature-icon" aria-hidden="true"></i>
+            <h3>Desarrollo a medida</h3>
+            <p>Plataformas escalables, APIs seguras y aplicaciones optimizadas para tu negocio.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fas fa-robot feature-icon" aria-hidden="true"></i>
+            <h3>Automatización inteligente</h3>
+            <p>Automatizamos tareas repetitivas para que tu equipo se enfoque donde importa.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fas fa-chart-line feature-icon" aria-hidden="true"></i>
+            <h3>Analítica y BI</h3>
+            <p>Informes interactivos y predicciones que permiten tomar decisiones con confianza.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fas fa-shield-alt feature-icon" aria-hidden="true"></i>
+            <h3>Seguridad y cumplimiento</h3>
+            <p>Protegemos los datos con prácticas certificadas y auditorías continuas.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Sobre Nosotros -->
+    <section class="pricing" id="precios">
+      <div class="container">
+        <div class="section-title">
+          <h2>Planes flexibles para cada etapa</h2>
+          <p>
+            Desde startups hasta empresas consolidadas, tenemos un plan diseñado para apoyarte en todas las fases.
+          </p>
+        </div>
+        <div class="pricing-grid">
+          <article class="plan-card">
+            <h3>Starter</h3>
+            <p class="price">$499</p>
+            <p class="subtitle">Ideal para proyectos iniciales.</p>
+            <ul>
+              <li>Desarrollo básico</li>
+              <li>Soporte por email</li>
+              <li>1 revisión mensual</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contacto">Solicitar</a>
+          </article>
+          <article class="plan-card best">
+            <h3>Profesional</h3>
+            <p class="price">$1,299</p>
+            <p class="subtitle">El equilibrio ideal entre alcance y velocidad.</p>
+            <ul>
+              <li>Desarrollo avanzado</li>
+              <li>Integraciones API</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a class="btn btn-primary" href="#contacto">Solicitar</a>
+          </article>
+          <article class="plan-card">
+            <h3>Enterprise</h3>
+            <p class="price">Desde $2,499</p>
+            <p class="subtitle">Soluciones a medida para equipos grandes.</p>
+            <ul>
+              <li>Arquitectura escalable</li>
+              <li>Soporte 24/7</li>
+              <li>SLA dedicado</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contacto">Solicitar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonios">
+      <div class="container">
+        <div class="section-title">
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>Historias reales de empresas que lograron resultados concretos trabajando con nosotros.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial">
+            <p class="quote">
+              "Gracias al equipo de MiMarca pudimos lanzar una solución en semanas y reducir tiempos de proceso en un
+              40%".
+            </p>
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=80&q=80" alt="Cliente satisfecho" loading="lazy" />
+              <div class="author-info">
+                <strong>Laura Gómez</strong>
+                <span>Directora de Operaciones, FinTech</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="quote">
+              "La analítica que implementaron nos permitió tomar decisiones basadas en datos y mejorar métricas clave.
+              Excelente acompañamiento".
+            </p>
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=80&q=80" alt="Cliente satisfecho" loading="lazy" />
+              <div class="author-info">
+                <strong>Carlos Méndez</strong>
+                <span>CEO, Retail Tech</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="quote">
+              "Su equipo entiende nuestros objetivos. Implementaron mejoras rápidas y nos dieron visibilidad total del
+              progreso".
+            </p>
+            <div class="author">
+              <img src="https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?auto=format&fit=crop&w=80&q=80" alt="Cliente satisfecho" loading="lazy" />
+              <div class="author-info">
+                <strong>María Prieto</strong>
+                <span>Gerente de Producto, SaaS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Quiénes somos</h2>
-                <p>Un equipo multidisciplinario apasionado por transformar ideas en soluciones digitales de impacto.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Nuestra visión</h2>
-                    <p>Ser el partner tecnológico de referencia para pymes y empresas que buscan innovar sin fricciones.</p>
-                    <p>Contamos con más de 8 años de experiencia en proyectos internacionales y una tasa de satisfacción del 96 %.</p>
-                    <a href="#contacto" class="btn btn-outline">Hablar con un experto</a>
-                </div>
-                <div class="about-image">
-                    <!-- Imagen de ejemplo; reemplázala con una real del equipo -->
-                    <img src="https://via.placeholder.com/800x500?text=Equipo+MiMarca" alt="Nuestro equipo">
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Quiénes somos</h2>
+          <p>
+            Somos un equipo multidisciplinario enfocado en entregar resultados reales. Nos movemos rápido manteniendo la
+            calidad y la transparencia.
+          </p>
         </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>Transformamos ideas en soluciones</h2>
+            <p>
+              Desde 2018 trabajamos con organizaciones de todos los tamaños para mejorar sus procesos, reducir costos y
+              ofrecer experiencias inolvidables.
+            </p>
+            <p>
+              Nuestro enfoque combina investigación de usuarios, arquitectura de software moderna y entrega ágil.
+            </p>
+            <a class="btn btn-secondary" href="#contacto">Habla con un experto</a>
+
+            <div class="cards">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=150&q=80" alt="Equipo trabajando" />
+                <h4>Equipo dedicado</h4>
+                <p>Profesionales con experiencia en producto, UX y tecnología, listos para acompañar tu proyecto.</p>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=150&q=80" alt="Procesos ágiles" />
+                <h4>Metodologías ágiles</h4>
+                <p>Iteraciones cortas, entregas frecuentes y aprendizaje continuo asegurando resultados visibles.</p>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=150&q=80" alt="Resultados medibles" />
+                <h4>Resultados medibles</h4>
+                <p>KPIs claros y métricas que muestran cómo tu inversión se traduce en crecimiento.</p>
+              </div>
+            </div>
+          </div>
+
+          <figure class="about-hero" aria-label="Equipo de trabajo">
+            <img
+              src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80"
+              alt="Nuestro equipo colaborando"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
     </section>
 
-    <!-- Contacto -->
     <section class="contact" id="contacto">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contáctanos</h2>
-                <p>¿Tienes un proyecto en mente? Cuéntanos y nos pondremos en contacto dentro de las próximas 24 h.</p>
-            </div>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nombre completo</label>
-                        <input type="text" id="name" name="name" placeholder="Juan Pérez" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" placeholder="juan@empresa.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Teléfono (opcional)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+34 600 123 456">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" placeholder="Cuéntanos brevemente tu necesidad..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Enviar mensaje</button>
-                </form>
-                <div class="success-message" id="successMessage">
-                    ✅ ¡Gracias! Tu mensaje ha sido recibido. Nos pondremos en contacto pronto.
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Hablemos de tu proyecto</h2>
+          <p>
+            Completa el formulario y nos pondremos en contacto en menos de 24 horas. También puedes enviarnos un correo a
+            hola@mimarca.com.
+          </p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>MiMarca</h3>
-                    <p>Innovación tecnológica al servicio de tu crecimiento.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </
+        <div class="contact-grid">
+          <div class="contact-card" aria-label="Información de contacto">
+            <h3>Información</h3>
+            <ul class="contact-list">
+              <li>
+                <strong>Correo</strong><br /><a href="mailto:hola@mimarca.com">hola@mimarca.com</a>
+              </li>
+              <li>
+                <strong>Teléfono</strong><br /><a href="tel:+34123456789">+34 123 456 789</a>
+              </li>
+              <li>
+                <strong>Ubicación</strong><br />Madrid, España
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <input id="name" name="name" type="text" placeholder="Ej. María García" required />
+                <div class="form-error" aria-live="polite" id="error-name"></div>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" placeholder="ejemplo@empresa.com" required />
+                <div class="form-error" aria-live="polite" id="error-email"></div>
+              </div>
+              <div class="form-group">
+                <label for="phone">Teléfono (opcional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="+34 600 123 456" />
+              </div>
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" placeholder="Cuéntanos brevemente tu proyecto" required></textarea>
+                <div class="form-error" aria-live="polite" id="error-message"></div>
+              </div>
+            </div>
+            <p class="form-note">Tu información será tratada con confidencialidad. Consulta nuestra
+              <a href="#" target="_blank" rel="noreferrer">política de privacidad</a>.
+            </p>
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            <div class="success-message" role="status" aria-live="polite" id="formSuccess">
+              ✅ ¡Gracias! Tu mensaje ha sido enviado. Te contactaremos pronto.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section" aria-label="Sobre nosotros">
+          <h3>MiMarca</h3>
+          <p>
+            Creamos soluciones digitales que generan impacto real. Más allá del código, ayudamos a crecer con enfoque
+            estratégico.
+          </p>
+        </div>
+
+        <div class="footer-section" aria-label="Enlaces rápidos">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#precios">Precios</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section" aria-label="Síguenos">
+          <h3>Síguenos</h3>
+          <div class="social-links">
+            <a class="social-link" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-link" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a class="social-link" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="social-link" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> MiMarca. Todos los derechos reservados.</p>
+        <p>
+          <a href="#">Política de privacidad</a> · <a href="#">Términos y condiciones</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
